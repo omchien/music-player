@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.player .icon-pause {
+  display: none;
+}
+
+.player.playing .icon-pause {
+  display: inline-block;
+}
+
+.player.playing .icon-play {
+  display: none;
+}
+
+.btn-active {
+  color: rgb(236, 31, 85);
+}
+
+.btn-volume .icon-volume-off {
+  display: none;
+}
+
+.btn-volume.btn-volume-off .icon-volume-off {
+  display: inline-block;
+}
+
+.btn-volume.btn-volume-off .icon-volume-on {
+  display: none;
+}
+
+.song.song-active {
+  background-image: linear-gradient(to bottom right, #ec1f55, #e77b98);
+}
+
+.song.song-active .option:hover {
+  background-color: rgb(209, 213, 219);
+}
+
+.song.song-active .title,
+.song.song-active .singer,
+.song.song-active .option {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.song.song-active .option:hover {
+  color: black;
+}

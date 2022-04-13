@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="bg-[#f5f5f5]">
+    <!-- Player music -->
+    <div class="player first-line:relative max-w-[480px] mx-auto my-0">
+      <!-- Dashboard -->
+      <div
+        class="fixed top-0 max-w-[480px] w-[100%] p-4 border-b-[1px] border-b-[#ebebeb] bg-white"
+      >
+        <!-- Header -->
+        <header class="text-center mb-4">
+          <h4 class="text-base font-semibold text-[#ec1f55]">Bài Hát:</h4>
+          <h2 class="text-xl font-bold text-[#333]">String 57th & 9th</h2>
+        </header>
+
+        <!-- CD -->
+        <div class="cd flex w-[200px] mx-auto">
+          <div
+            class="cd-thumb mx-auto w-[100%] pt-[100%] rounded-[50%] bg-cover bg-center]"
+            style="background-image: url('')"
+          ></div>
+        </div>
+
+        <!-- Control -->
+        <div class="flex justify-between items-center px-0 pt-3 pb-2">
+          <div
+            class="btn-repeat hover:text-[#eb3a69] active:text-[#d72857] cursor-pointer text-xl p-[18px] text-[#666]"
+          >
+            <i class="fa-solid fa-rotate-right"></i>
+          </div>
+          <div
+            class="btn-prev hover:text-[#eb3a69] active:text-[#d72857] cursor-pointer text-xl p-[18px] text-[#666]"
+          >
+            <i class="fa-solid fa-backward-step"></i>
+          </div>
+          <div
+            class="btn-toggle-play hover:text-[#dc0a42] cursor-pointer flex justify-center items-center w-14 h-14 text-5xl p-[18px] text-[#ec1f55]"
+          >
+            <i class="icon-play fa-solid fa-circle-play"></i>
+            <i class="icon-pause fa-solid fa-circle-pause"></i>
+          </div>
+          <div
+            class="btn-next hover:text-[#eb3a69] active:text-[#d72857] cursor-pointer text-xl p-[18px] text-[#666]"
+          >
+            <i class="fa-solid fa-forward-step"></i>
+          </div>
+          <div
+            class="btn-random hover:text-[#eb3a69] active:text-[#d72857] cursor-pointer text-xl p-[18px] text-[#666]"
+          >
+            <i class="fa-solid fa-shuffle"></i>
+          </div>
+        </div>
+
+        <!-- Volume -->
+        <div class="volume flex justify-center items-center mb-4 mt-2">
+          <div
+            class="btn-volume max-w-[16px] mr-5 opacity-80 hover:opacity-70 active:opacity-100 cursor-pointer text-xl text-[#666]"
+          >
+            <i class="icon-volume-on fa-solid fa-volume-high"></i>
+            <i class="icon-volume-off fa-solid fa-volume-xmark"></i>
+          </div>
+          <input
+            id="volume-progress"
+            class="cursor-pointer opacity-70"
+            type="range"
+            min="0"
+            max="100"
+            step="1"
+            value="50"
+          />
+        </div>
+
+        <!-- Progress -->
+        <div class="flex">
+          <span class="current-time px-2"></span>
+          <input
+            id="progress"
+            class="relative top-[1px] w-full opacity-70 cursor-pointer"
+            type="range"
+            value="0"
+            step="1"
+            min="0"
+            max="100"
+          />
+          <span class="end-time px-2"></span>
+        </div>
+
+        <audio id="audio" src="" preload="metadata"></audio>
+      </div>
+
+      <!-- Playlist -->
+      <div class="playlist mt-[475px]"></div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
