@@ -604,24 +604,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: space-between;
 }
 
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
 .rounded-\[50\%\] {
   border-radius: 50%;
 }
 
 .rounded-lg {
   border-radius: 0.5rem;
-}
-
-.rounded-md {
-  border-radius: 0.375rem;
-}
-
-.rounded-2xl {
-  border-radius: 1rem;
-}
-
-.rounded-xl {
-  border-radius: 0.75rem;
 }
 
 .border-b-\[1px\] {
@@ -655,6 +647,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 1rem;
 }
 
+.p-\[10px\] {
+  padding: 10px;
+}
+
 .p-\[18px\] {
   padding: 18px;
 }
@@ -665,14 +661,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-2 {
   padding: 0.5rem;
-}
-
-.p-\[12px\] {
-  padding: 12px;
-}
-
-.p-\[10px\] {
-  padding: 10px;
 }
 
 .px-0 {
@@ -815,11 +803,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:bg-gray-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-
-.hover\:text-\[\#eb3a69\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(235 58 105 / var(--tw-text-opacity));
 }
 
 .hover\:text-\[\#dc0a42\]:hover {

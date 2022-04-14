@@ -275,6 +275,8 @@ const app = {
         audio.play();
       } else if (_this.isRandom) {
         _this.randomSong();
+        $(`.song.song-item-${_this.currentIndex}`).classList.add('song-active');
+        _this.scrollToActiveSong();
         audio.play();
       } else {
         nextBtn.click();
