@@ -274,6 +274,9 @@ const app = {
       if (_this.isRepeat) {
         audio.play();
       } else if (_this.isRandom) {
+        $(`.song.song-item-${_this.currentIndex}`).classList.remove(
+          'song-active'
+        );
         _this.randomSong();
         $(`.song.song-item-${_this.currentIndex}`).classList.add('song-active');
         _this.scrollToActiveSong();
