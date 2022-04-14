@@ -21,6 +21,7 @@ const endTime = $('.end-time');
 const playList = $('.playlist');
 
 const app = {
+  songIndexes: [],
   currentIndex: 0,
   isPlaying: false,
   isRandom: false,
@@ -30,72 +31,62 @@ const app = {
     {
       name: 'Đám Cưới Nha?',
       singer: 'Hồng Thanh, DJ Mie',
-      path: 'https://vnso-zn-10-tf-mp3-320s1-m-zmp3.zmdcdn.me/fe80177f4e3ea760fe2f/6252296707180606574?authen=exp=1649817776~acl=/fe80177f4e3ea760fe2f/*~hmac=974fb5ed931c2312ccce8029cbef99b1&fs=MTY0OTY0NDk3NjY5NXx3ZWJWNHwxMDMdUngODIdUngMjmUsICdUngODk',
-      image:
-        'https://photo-resize-zmp3.zmdcdn.me/w480_r1x1_webp/cover/5/b/8/b/5b8b7cd3d1434afa3b2b9854efdc8756.jpg',
+      path: './songs/dam_cuoi_nha.mp3',
+      image: './images/dam_cuoi_nha.png',
     },
     {
       name: 'Muốn Em Là',
       singer: 'Keyo',
-      path: 'https://vnso-zn-23-tf-mp3-320s1-m-zmp3.zmdcdn.me/8b03e577be3657680e27/1985382090461400208?authen=exp=1649817919~acl=/8b03e577be3657680e27/*~hmac=15e30ac5fdcf35572afbdbfaf8690be0&fs=MTY0OTY0NTExOTmUsIC0MXx3ZWJWNHwxMDMdUngODIdUngMjmUsICdUngODk',
-      image:
-        'https://photo-resize-zmp3.zmdcdn.me/w480_r1x1_webp/cover/7/4/0/9/7409e051f6f27cb8e6d241654ebb20d3.jpg',
+      path: './songs/muon_em_la.mp3',
+      image: './images/muon_em_la.png',
     },
     {
-      name: 'Chạy Về Phía Anh',
+      name: 'Chạy Về Nơi Phía Anh',
       singer: 'Khắc Việt',
-      path: 'https://vnso-zn-24-tf-mp3-320s1-m-zmp3.zmdcdn.me/6439a37bce3a27647e2b/4974064795925961644?authen=exp=1649817970~acl=/6439a37bce3a27647e2b/*~hmac=c47e5aaa7b8722e02656ae87d35b7181&fs=MTY0OTY0NTE3MDgyN3x3ZWJWNHwxMDMdUngODIdUngMjmUsICdUngODk',
-      image:
-        'https://photo-resize-zmp3.zmdcdn.me/w480_r1x1_webp/cover/6/3/0/d/630d20b0a79917e1545b4e2ada081040.jpg',
+      path: './songs/chay_ve_noi_phia_anh.mp3',
+      image: './images/chay_ve_noi_phia_anh.png',
     },
     {
       name: 'Người Tôi Yêu Chẳng Hề Yêu Tôi',
       singer: 'Chi Dân',
-      path: 'https://vnso-zn-24-tf-mp3-320s1-m-zmp3.zmdcdn.me/1082eadbac9a45c41c8b/6030827680538899229?authen=exp=1649818052~acl=/1082eadbac9a45c41c8b/*~hmac=412926ffb07eae02c405103f2e3faa78&fs=MTY0OTY0NTI1MjE2N3x3ZWJWNHwxMDMdUngODIdUngMjmUsICdUngODk',
-      image:
-        'https://photo-resize-zmp3.zmdcdn.me/w480_r1x1_webp/cover/2/9/1/b/291b5a81f266d588cf4344766676a140.jpg',
+      path: './songs/nguoi_toi_yeu_chang_he_yeu_toi.mp3',
+      image: './images/nguoi_toi_yeu_chang_he_yeu_toi.png',
     },
     {
       name: 'May Mắn Khi Có Em',
       singer: 'Đạt Villa, Phạm Sắc Lệnh',
-      path: 'https://vnso-zn-23-tf-mp3-320s1-m-zmp3.zmdcdn.me/1cb4c6168b5762093b46/5250788465602710563?authen=exp=1649818125~acl=/1cb4c6168b5762093b46/*~hmac=e6377fc698b3f2c9aa0a437506fae823&fs=MTY0OTY0NTMyNTE0OXx3ZWJWNHwxMDMdUngODIdUngMjmUsICdUngODk',
-      image:
-        'https://photo-resize-zmp3.zmdcdn.me/w480_r1x1_webp/cover/3/0/9/8/309880d36090dae9e8d72b17fd1a1785.jpg',
+      path: './songs/may_man_khi_co_em.mp3',
+      image: './images/may_man_khi_co_em.png',
     },
     {
       name: 'Khi Nào (Hoàn Châu Cách Cách OST)',
       singer: 'Hương Ly',
-      path: 'https://vnso-zn-24-tf-mp3-320s1-m-zmp3.zmdcdn.me/1283e6ffa8be41e018af/7656719676010625054?authen=exp=1649822134~acl=/1283e6ffa8be41e018af/*~hmac=b533147056033cf272d399a904893566&fs=MTY0OTY0OTMzNDk1NHx3ZWJWNHwxMDMdUngODIdUngMjmUsICdUngODk',
-      image:
-        'https://photo-resize-zmp3.zmdcdn.me/w480_r1x1_webp/cover/4/7/5/1/475127c448df9e29a4ce598edb10e961.jpg',
+      path: './songs/khi_nao.mp3',
+      image: './images/khi_nao.png',
     },
     {
       name: 'Rung Động',
       singer: 'Dương Edward',
-      path: 'https://vnso-zn-10-tf-mp3-320s1-m-zmp3.zmdcdn.me/6c04ade4f8a511fb48b4/5735347877960093033?authen=exp=1649822249~acl=/6c04ade4f8a511fb48b4/*~hmac=4f00581a794097e22bed4e4061a06bf9&fs=MTY0OTY0OTQ0OTQ1OHx3ZWJWNHwxMDMdUngODIdUngMjmUsICdUngODk',
-      image:
-        'https://photo-resize-zmp3.zmdcdn.me/w480_r1x1_webp/cover/d/e/3/8/de38ea78ded4ceaf57bd74b07125bcef.jpg',
+      path: './songs/rung_dong.mp3',
+      image: './images/rung_dong.png',
     },
     {
       name: 'Thương Em Không',
       singer: 'Saka Trương Tuyền, Lưu Hưng',
-      path: 'https://vnso-zn-5-tf-mp3-320s1-m-zmp3.zmdcdn.me/229726ba6afb83a5daea/1087524605915532883?authen=exp=1649822392~acl=/229726ba6afb83a5daea/*~hmac=172edd0f69844c9427513a4d8ba5d8fd&fs=MTY0OTY0OTU5MjQyOXx3ZWJWNHwxMDMdUngODIdUngMjmUsICdUngODk',
-      image:
-        'https://photo-resize-zmp3.zmdcdn.me/w480_r1x1_webp/cover/2/0/f/9/20f91317e6ff0758c539eed897fdba03.jpg',
+      path: './songs/thuong_em_khong.mp3',
+      image: './images/thuong_em_khong.png',
     },
     {
       name: 'Như Mùa Tuyết Đầu Tiên',
       singer: 'Mr.B',
-      path: 'https://vnso-zn-10-tf-mp3-320s1-m-zmp3.zmdcdn.me/a95fbdccfb8d12d34b9c/5459861682116099420?authen=exp=1649923649~acl=/a95fbdccfb8d12d34b9c/*~hmac=e315336c27384170bd48ca36038fc9b8&fs=MTY0OTmUsIC1MDg0OTgyNnx3ZWJWNHwxMDMdUngODIdUngMjmUsICdUngODk',
-      image:
-        'https://photo-resize-zmp3.zmdcdn.me/w480_r1x1_webp/cover/c/b/9/3/cb9376c62a3f035a1a7cac7d0e4a32d5.jpg',
+      path: './songs/nhu_mua_tuyet_dau_tien.mp3',
+      image: './images/nhu_mua_tuyet_dau_tien.png',
     },
     {
       name: 'Tình Đơn Côi',
       singer: 'Vicky Nhung, Long Rex',
-      path: 'https://vnso-zn-16-tf-mp3-320s1-m-zmp3.zmdcdn.me/1e5876371676ff28a667/7064362443539608727?authen=exp=1649923789~acl=/1e5876371676ff28a667/*~hmac=18667be15e562a737b15a1fcdacc1c66&fs=MTY0OTmUsIC1MDk4OTEzN3x3ZWJWNHwxMDMdUngODIdUngMjmUsICdUngODk',
-      image:
-        'https://photo-resize-zmp3.zmdcdn.me/w480_r1x1_webp/cover/1/0/f/f/10ffd25d9f1e2c095834d7377a0f954c.jpg',
+      path: './songs/tinh_don_coi.mp3',
+      image: './images/tinh_don_coi.png',
     },
   ],
   config: JSON.parse(localStorage.getItem('PLAYER_STORAGE_KEY')) || {},
@@ -282,6 +273,9 @@ const app = {
     audio.addEventListener('ended', function () {
       if (_this.isRepeat) {
         audio.play();
+      } else if (_this.isRandom) {
+        _this.randomSong();
+        audio.play();
       } else {
         nextBtn.click();
       }
@@ -329,8 +323,18 @@ const app = {
     do {
       newIndex = Math.floor(Math.random() * this.songs.length);
     } while (newIndex === this.currentIndex);
-    this.currentIndex = newIndex;
-    this.loadCurrentSong();
+    console.log(this.currentIndex, newIndex);
+    if (this.songIndexes.length >= this.songs.length) {
+      this.songIndexes.length = 0;
+    }
+    if (!this.songIndexes.includes(newIndex)) {
+      this.songIndexes.push(newIndex);
+      this.currentIndex = newIndex;
+      this.loadCurrentSong();
+    } else {
+      this.randomSong();
+    }
+    console.log(this.songIndexes);
   },
   secondsToMinute: function (e) {
     var m = Math.floor((e % 3600) / 60)
