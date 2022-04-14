@@ -362,8 +362,10 @@ const app = {
     this.render();
 
     // Hiển thị trạng thái ban đầu của nút Random & Repeat
-    randomBtn.classList.toggle('btn-active', this.isRandom);
-    repeatBtn.classList.toggle('btn-active', this.isRepeat);
+    if (!(localStorage.getItem('PLAYER_STORAGE_KEY') === null)) {
+      randomBtn.classList.toggle('btn-active', this.isRandom);
+      repeatBtn.classList.toggle('btn-active', this.isRepeat);
+    }
 
     audio.volume = 0.5;
   },
